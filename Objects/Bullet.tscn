@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://CollisionShape2D.gd" type="Script" id=1]
+[ext_resource path="res://Bullet.gd" type="Script" id=2]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 4.5
+
+[sub_resource type="Gradient" id=2]
+colors = PoolColorArray( 1, 1, 1, 1, 0.251309, 0.251309, 0.251309, 1 )
+
+[sub_resource type="GradientTexture" id=3]
+gradient = SubResource( 2 )
+
+[sub_resource type="ParticlesMaterial" id=4]
+emission_shape = 1
+emission_sphere_radius = 1.0
+flag_rotate_y = true
+flag_disable_z = true
+direction = Vector3( 1, 1, 0 )
+spread = 180.0
+gravity = Vector3( 0, 98, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 100.0
+angle = -45.0
+scale = 2.0
+color_ramp = SubResource( 3 )
+
+[node name="Bullet" type="Area2D"]
+collision_layer = 4
+collision_mask = 9
+script = ExtResource( 2 )
+move_speed = 300.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 6
+shape = SubResource( 1 )
+script = ExtResource( 1 )
+inner_color = Color( 0, 0.501961, 0.360784, 1 )
+outer_color = Color( 0, 1, 0.670588, 1 )
+stroke = 2.0
+
+[node name="Particles2D" type="Particles2D" parent="."]
+z_index = 5
+amount = 15
+process_material = SubResource( 4 )

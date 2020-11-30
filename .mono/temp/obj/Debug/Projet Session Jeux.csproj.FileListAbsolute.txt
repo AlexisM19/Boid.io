@@ -1,0 +1,8 @@
+D:\GodotProjects\ProjetSessionJeux\.mono\temp\obj\Debug\Projet Session Jeux.csprojAssemblyReference.cache
+D:\GodotProjects\ProjetSessionJeux\.mono\temp\obj\Debug\Projet Session Jeux.AssemblyInfoInputs.cache
+D:\GodotProjects\ProjetSessionJeux\.mono\temp\obj\Debug\Projet Session Jeux.AssemblyInfo.cs
+D:\GodotProjects\ProjetSessionJeux\.mono\temp\obj\Debug\Projet Session Jeux.csproj.CoreCompileInputs.cache
+D:\GodotProjects\ProjetSessionJeux\.mono\temp\bin\Debug\Projet Session Jeux.dll
+D:\GodotProjects\ProjetSessionJeux\.mono\temp\bin\Debug\Projet Session Jeux.pdb
+D:\GodotProjects\ProjetSessionJeux\.mono\temp\obj\Debug\Projet Session Jeux.dll
+D:\GodotProjects\ProjetSessionJeux\.mono\temp\obj\Debug\Projet Session Jeux.pdb

@@ -1,0 +1,300 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://MainMenu/Buttons/goBackButton.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Ressources/Fonts/Raleway-Medium.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://MainMenu/Options/Slider.gd" type="Script" id=3]
+[ext_resource path="res://MainMenu/Options/MainOptionsScene.gd" type="Script" id=4]
+[ext_resource path="res://MainMenu/Buttons/MenuButton.tscn" type="PackedScene" id=5]
+[ext_resource path="res://MainMenu/Buttons/DevOptions.gd" type="Script" id=6]
+[ext_resource path="res://MainMenu/RainbowBackground.tscn" type="PackedScene" id=7]
+[ext_resource path="res://MainMenu/Buttons/MusicButton.gd" type="Script" id=10]
+[ext_resource path="res://MainMenu/Buttons/SfxButton.gd" type="Script" id=11]
+
+[sub_resource type="DynamicFont" id=1]
+size = 20
+extra_spacing_char = 2
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 20
+extra_spacing_char = 2
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 20
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 20
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 20
+extra_spacing_char = 2
+font_data = ExtResource( 2 )
+
+[node name="OptionsScene" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" parent="." instance=ExtResource( 7 )]
+position = Vector2( 800, 456 )
+
+[node name="goBackButton" parent="." instance=ExtResource( 1 )]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 128.0
+margin_top = -164.0
+margin_right = 320.0
+margin_bottom = -100.0
+custom_fonts/font = SubResource( 1 )
+reference_path = "res://MainMenu/MainMenuScreen.tscn"
+
+[node name="Sliders" type="Control" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -20.0
+margin_right = 20.0
+margin_bottom = 20.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Sliders"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -232.0
+margin_top = -300.0
+margin_right = 232.0
+margin_bottom = 300.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 60
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MoveSpeed" type="HBoxContainer" parent="Sliders/VBoxContainer"]
+margin_top = 287.0
+margin_right = 464.0
+margin_bottom = 312.0
+rect_min_size = Vector2( 303, 25 )
+custom_constants/separation = 20
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name" type="Label" parent="Sliders/VBoxContainer/MoveSpeed"]
+margin_right = 250.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 250, 0 )
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 2 )
+text = "Move Speed"
+
+[node name="HSlider" type="HSlider" parent="Sliders/VBoxContainer/MoveSpeed"]
+margin_left = 270.0
+margin_right = 420.0
+margin_bottom = 25.0
+rect_min_size = Vector2( 150, 0 )
+size_flags_vertical = 3
+
+[node name="Value" type="Label" parent="Sliders/VBoxContainer/MoveSpeed"]
+margin_left = 440.0
+margin_right = 464.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 3 )
+text = "0"
+
+[node name="Label" type="Label" parent="Sliders/VBoxContainer/MoveSpeed/Value"]
+margin_left = 15.0
+margin_top = -2.0
+margin_right = 50.0
+margin_bottom = 22.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 4 )
+text = "%"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EnnemiesCount" type="HBoxContainer" parent="Sliders/VBoxContainer"]
+visible = false
+margin_top = 287.0
+margin_right = 464.0
+margin_bottom = 312.0
+rect_min_size = Vector2( 303, 25 )
+custom_constants/separation = 20
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name" type="Label" parent="Sliders/VBoxContainer/EnnemiesCount"]
+margin_right = 250.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 250, 0 )
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 2 )
+text = "Ennemies Count"
+
+[node name="HSlider" type="HSlider" parent="Sliders/VBoxContainer/EnnemiesCount"]
+margin_left = 270.0
+margin_right = 420.0
+margin_bottom = 25.0
+rect_min_size = Vector2( 150, 0 )
+size_flags_vertical = 3
+
+[node name="Value" type="Label" parent="Sliders/VBoxContainer/EnnemiesCount"]
+margin_left = 440.0
+margin_right = 464.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 3 )
+text = "0"
+
+[node name="Label" type="Label" parent="Sliders/VBoxContainer/EnnemiesCount/Value"]
+margin_left = 15.0
+margin_top = -2.0
+margin_right = 50.0
+margin_bottom = 22.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 4 )
+text = "%"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FoodCount" type="HBoxContainer" parent="Sliders/VBoxContainer"]
+visible = false
+margin_top = 330.0
+margin_right = 464.0
+margin_bottom = 355.0
+rect_min_size = Vector2( 303, 25 )
+custom_constants/separation = 20
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name" type="Label" parent="Sliders/VBoxContainer/FoodCount"]
+margin_right = 250.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 250, 0 )
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 2 )
+text = "Food Count"
+
+[node name="HSlider" type="HSlider" parent="Sliders/VBoxContainer/FoodCount"]
+margin_left = 270.0
+margin_right = 420.0
+margin_bottom = 25.0
+rect_min_size = Vector2( 150, 0 )
+size_flags_vertical = 3
+
+[node name="Value" type="Label" parent="Sliders/VBoxContainer/FoodCount"]
+margin_left = 440.0
+margin_right = 464.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 3 )
+text = "0"
+
+[node name="Label" type="Label" parent="Sliders/VBoxContainer/FoodCount/Value"]
+margin_left = 15.0
+margin_top = -2.0
+margin_right = 50.0
+margin_bottom = 22.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 4 )
+text = "%"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DevOptions" parent="." instance=ExtResource( 5 )]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -184.0
+margin_top = 256.0
+margin_right = -64.0
+margin_bottom = 320.0
+custom_fonts/font = SubResource( 6 )
+text = "DEV"
+script = ExtResource( 6 )
+
+[node name="DevStatus" type="Label" parent="DevOptions"]
+margin_left = 40.0
+margin_top = 48.0
+margin_right = 80.0
+margin_bottom = 62.0
+text = "False"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DevOptions2" parent="." instance=ExtResource( 5 )]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -184.0
+margin_top = 160.0
+margin_right = -61.0
+margin_bottom = 224.0
+custom_fonts/font = SubResource( 6 )
+text = "Music"
+script = ExtResource( 10 )
+
+[node name="MusicStatus" type="Label" parent="DevOptions2"]
+margin_left = 40.0
+margin_top = 48.0
+margin_right = 80.0
+margin_bottom = 62.0
+text = "True"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DevOptions3" parent="." instance=ExtResource( 5 )]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -184.0
+margin_top = 64.0
+margin_right = -61.0
+margin_bottom = 128.0
+custom_fonts/font = SubResource( 6 )
+text = "SoundFX"
+script = ExtResource( 11 )
+
+[node name="SfxStatus" type="Label" parent="DevOptions3"]
+margin_left = 40.0
+margin_top = 48.0
+margin_right = 80.0
+margin_bottom = 62.0
+text = "True"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="value_changed" from="Sliders/VBoxContainer/MoveSpeed/HSlider" to="Sliders/VBoxContainer/MoveSpeed" method="_on_MoveSpeed_move_speed_changed"]
+[connection signal="value_changed" from="Sliders/VBoxContainer/EnnemiesCount/HSlider" to="Sliders/VBoxContainer/EnnemiesCount" method="_on_ennemies_count_value_changed"]
+[connection signal="value_changed" from="Sliders/VBoxContainer/FoodCount/HSlider" to="Sliders/VBoxContainer/FoodCount" method="_on_food_count_value_changed"]

@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://GamePlaying/Overlay/PauseMenu.gd" type="Script" id=1]
+[ext_resource path="res://MainMenu/Options/OptionsScene.tscn" type="PackedScene" id=2]
+
+[node name="PauseMenu" type="Control"]
+pause_mode = 2
+light_mask = 513
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PauseOverlay" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.364706 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OptionsScene" parent="PauseOverlay" instance=ExtResource( 2 )]

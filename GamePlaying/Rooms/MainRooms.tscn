@@ -1,0 +1,34 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://GamePlaying/Rooms/MainRooms.gd" type="Script" id=1]
+[ext_resource path="res://Ressources/Images/tiles.tres" type="TileSet" id=2]
+[ext_resource path="res://Movers/PlayerAgent.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Movers/FollowerAgent.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Ressources/Sounds/Soundtrack/Out Run RemixOGG.ogg" type="AudioStream" id=5]
+[ext_resource path="res://GamePlaying/Rooms/Rooms.gd" type="Script" id=6]
+
+[node name="MainRooms" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Rooms" type="Node" parent="."]
+script = ExtResource( 6 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 12, 12 )
+
+[node name="TileMap" type="TileMap" parent="."]
+show_behind_parent = true
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 32, 32 )
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+format = 1
+
+[node name="PlayerAgent" parent="." instance=ExtResource( 3 )]
+
+[node name="FollowerAgent" parent="." instance=ExtResource( 4 )]
+target_path = NodePath("../PlayerAgent")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = -20.0

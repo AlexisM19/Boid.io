@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/[ONTIVA.COM] Gun shot sound effect pistal firing one shot sound-320k.wav-8cfcc090980e987af9fcf62f847f1088.sample"
+
+[deps]
+
+source_file="res://Ressources/Sounds/SoundFX/[ONTIVA.COM] Gun shot sound effect pistal firing one shot sound-320k.wav"
+dest_files=[ "res://.import/[ONTIVA.COM] Gun shot sound effect pistal firing one shot sound-320k.wav-8cfcc090980e987af9fcf62f847f1088.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

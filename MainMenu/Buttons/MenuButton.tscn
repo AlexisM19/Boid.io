@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://MainMenu/Themes/selected_button_theme.tres" type="StyleBox" id=1]
+[ext_resource path="res://MainMenu/Themes/non_selected_button_theme.tres" type="StyleBox" id=2]
+[ext_resource path="res://MainMenu/Buttons/MenuButton.gd" type="Script" id=3]
+
+[sub_resource type="StyleBoxFlat" id=5]
+corner_radius_top_left = 384
+
+[node name="Button" type="Button"]
+margin_right = 192.0
+margin_bottom = 64.0
+custom_styles/hover = ExtResource( 1 )
+custom_styles/pressed = SubResource( 5 )
+custom_styles/focus = ExtResource( 1 )
+custom_styles/normal = ExtResource( 2 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
