@@ -23,6 +23,8 @@ script = ExtResource( 1 )
 light_mask = 524288
 anchor_right = 0.029
 anchor_bottom = 0.071
+margin_left = -4.0
+margin_top = -3.0
 margin_right = 303.6
 margin_bottom = 136.1
 size_flags_horizontal = 3
@@ -33,8 +35,8 @@ __meta__ = {
 
 [node name="Background" type="NinePatchRect" parent="LogDev"]
 light_mask = 524288
-margin_right = 350.0
-margin_bottom = 200.0
+margin_right = 354.0
+margin_bottom = 203.0
 rect_clip_content = true
 texture = SubResource( 1 )
 patch_margin_top = 200
@@ -43,15 +45,15 @@ __meta__ = {
 }
 
 [node name="MarginContainer" type="MarginContainer" parent="LogDev"]
-margin_right = 350.0
-margin_bottom = 200.0
+margin_right = 354.0
+margin_bottom = 203.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="CenterContainer" type="CenterContainer" parent="LogDev/MarginContainer"]
-margin_right = 350.0
-margin_bottom = 200.0
+margin_right = 354.0
+margin_bottom = 203.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -59,10 +61,10 @@ __meta__ = {
 [node name="SpeedLabel" type="Label" parent="LogDev/MarginContainer/CenterContainer"]
 modulate = Color( 0, 1, 0.321569, 0.866667 )
 light_mask = -2147483647
-margin_left = 130.0
-margin_top = 88.0
-margin_right = 219.0
-margin_bottom = 112.0
+margin_left = 132.0
+margin_top = 89.0
+margin_right = 221.0
+margin_bottom = 113.0
 custom_fonts/font = SubResource( 2 )
 text = "Hey there"
 __meta__ = {

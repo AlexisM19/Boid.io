@@ -88,9 +88,9 @@ func make_rooms():
 		
 func _draw():
 	if start_room:
-		draw_string(font, start_room.position - Vector2(125, 0), "Start", Color(128, 36, 200))
+		draw_string(font, start_room.position - Vector2(125, 0), "Start", Color(74, 74, 74))
 	if end_room:
-		draw_string(font, end_room.position - Vector2(125, 0), "End", Color(128, 36, 200))
+		draw_string(font, end_room.position - Vector2(125, 0), "End", Color(74, 74, 74))
 	if play_mode || !GlobalScript.devOptions:
 		return
 	for room in $Rooms.get_children():
