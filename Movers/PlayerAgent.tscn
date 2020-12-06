@@ -7,7 +7,7 @@
 [ext_resource path="res://Ressources/Sounds/SoundFX/Gun shot sound effect pistal firing one shot sound-320k (mp3cut.net).wav" type="AudioStream" id=5]
 
 [node name="PlayerAgent" type="KinematicBody2D"]
-rotation = 1.57079
+rotation = 1.5708
 scale = Vector2( 1.75, 1.75 )
 collision_layer = 2
 collision_mask = 2147483657

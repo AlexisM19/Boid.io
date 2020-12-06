@@ -19,7 +19,7 @@ func _ready():
 
 func change_camera_received(on_or_off):
 	if !on_or_off:
-		$Camera2D.zoom = Vector2(12, 12)
+		$Camera2D.zoom = Vector2(15, 15)
 	else:
 		$Camera2D.zoom = Vector2(0.75, 0.75)
 		

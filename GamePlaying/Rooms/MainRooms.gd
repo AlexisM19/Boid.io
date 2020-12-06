@@ -114,38 +114,39 @@ func _process(delta):
 
 
 func _input(event):
-	if event.is_action_pressed("ui_select"):
-		if play_mode:
-			#Player.queue_free()
-			#Follower.queue_free()
-			play_mode = false
-		for r in $Rooms.get_children():
-			r.queue_free()
-		path = null
-		start_room = null
-		end_room = null
-		Map.clear()
-		make_rooms()
-	if event.is_action_pressed('ui_focus_next'):
-		if path:
+	if GlobalScript.devOptions:
+		if event.is_action_pressed("ui_select"):
+			if play_mode:
+				#Player.queue_free()
+				#Follower.queue_free()
+				play_mode = false
+			for r in $Rooms.get_children():
+				r.queue_free()
+			path = null
+			start_room = null
+			end_room = null
+			Map.clear()
+			make_rooms()
+		if event.is_action_pressed('ui_focus_next'):
+			if path:
+				play_mode = true
+				make_map()
+		if event.is_action_pressed('ui_playing'):
+			#add_child(player)
+			var strtpos = start_room.position
+			$PlayerAgent.position = strtpos
+			$FollowerAgent.position = strtpos
+			$PlayerAgent/Camera2D.zoom = Vector2(1, 1)
+	#		follower = Follower.instance()
+	#		add_child(follower)
+	#		follower.position = start_room.position - Vector2(10, 10)
 			play_mode = true
-			make_map()
-	if event.is_action_pressed('ui_playing'):
-		#add_child(player)
-		var strtpos = start_room.position
-		$PlayerAgent.position = strtpos
-		$FollowerAgent.position = strtpos
-		$PlayerAgent/Camera2D.zoom = Vector2(1, 1)
-#		follower = Follower.instance()
-#		add_child(follower)
-#		follower.position = start_room.position - Vector2(10, 10)
-		play_mode = true
-#		for room in $Rooms.get_children():
-#			room.make_food()
-#			var f = food_scene.instance()
-#			f.position = room.position
-#			room.add_child(food_scene)
-#			GlobalScript.foods.push_back(food_scene)
+	#		for room in $Rooms.get_children():
+	#			room.make_food()
+	#			var f = food_scene.instance()
+	#			f.position = room.position
+	#			room.add_child(food_scene)
+	#			GlobalScript.foods.push_back(food_scene)
 		
 		
 
